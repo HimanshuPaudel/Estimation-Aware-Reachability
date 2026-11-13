@@ -1,0 +1,14 @@
+\begin{tabular}{lcccccc}
+\toprule
+Metric & nominal only & filter, plain BRT & filter, plain BRT + margin (steady state) & filter, plain BRT + margin (max) & filter, estimation-aware BRT & belief CBF \\
+\midrule
+Collision rate & 1.000 & 0.708 & 0.002 & 0.000 & 0.000 & 0.025 \\
+Mean min. clearance [m] & -0.441 & -0.078 & 0.428 & 0.791 & 0.490 & 0.279 \\
+Mean engagement dist. $\|p\|$ [m] & nan & 0.78 & 1.29 & 1.63 & 1.41 & 1.96 \\
+Mean engagement time [s] & nan & 1.37 & 1.01 & 0.75 & 0.92 & 0.34 \\
+Active fraction & 0.000 & 0.079 & 0.071 & 0.072 & 0.059 & 0.942 \\
+Intervention $\int\|u-u_{nom}\|dt$ & 0.00 & 3.47 & 3.39 & 3.61 & 2.93 & 7.98 \\
+Goal reached & 0.734 & 0.366 & 0.061 & 0.086 & 0.021 & 0.000 \\
+QP infeasible (rollouts) & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.043 \\
+\bottomrule
+\end{tabular}

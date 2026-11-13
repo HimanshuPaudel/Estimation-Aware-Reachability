@@ -1,0 +1,66 @@
+Dynamics device cuda
+PlanarQuadrotor: parameters from config_10_31_2026_15_47.txt (all equal to class defaults)
+EstimationAwarePlanarQuadrotor: parameters from config_11_12_2026_00_02.txt (all equal to class defaults)
+SingleBVPNet(
+  (net): FCBlock(
+    (net): Sequential(
+      (0): Sequential(
+        (0): BatchLinear(in_features=7, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (1): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (2): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (3): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (4): Sequential(
+        (0): BatchLinear(in_features=512, out_features=1, bias=True)
+      )
+    )
+  )
+)
+SingleBVPNet(
+  (net): FCBlock(
+    (net): Sequential(
+      (0): Sequential(
+        (0): BatchLinear(in_features=10, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (1): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (2): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (3): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (4): Sequential(
+        (0): BatchLinear(in_features=512, out_features=1, bias=True)
+      )
+    )
+  )
+)
+belief CBF: delta=0.0013 (kappa=3.0), pole=2.0, a_max=4.0, margin gamma=0.0000, robust=True
+plain_ss: plain target inflated by kappa*sqrt(0.0231) = 0.4559 (engages when V_plain <= 0.5059)
+plain_max: plain target inflated by kappa*sqrt(0.0750) = 0.8216 (engages when V_plain <= 0.8716)
+
+=== noise scale 1.0 ===
+  none: collision_rate=1.000, ci_lo=0.998, ci_hi=1.000, min_clear_mean=-0.441, min_clear_min=-0.500, engaged_rate=0.000, eng_dist_true_mean=nan, eng_time_mean=nan, frac_active_mean=0.000, effort_mean=0.000, goal_reached=0.734, qp_infeasible_rate=0.000
+ plain: collision_rate=0.708, ci_lo=0.687, ci_hi=0.727, min_clear_mean=-0.078, min_clear_min=-0.487, engaged_rate=1.000, eng_dist_true_mean=0.776, eng_time_mean=1.373, frac_active_mean=0.079, effort_mean=3.472, goal_reached=0.366, qp_infeasible_rate=0.000
+plain_ss: collision_rate=0.002, ci_lo=0.001, ci_hi=0.005, min_clear_mean=0.428, min_clear_min=-0.100, engaged_rate=1.000, eng_dist_true_mean=1.289, eng_time_mean=1.010, frac_active_mean=0.071, effort_mean=3.385, goal_reached=0.061, qp_infeasible_rate=0.000
+plain_max: collision_rate=0.000, ci_lo=0.000, ci_hi=0.002, min_clear_mean=0.791, min_clear_min=0.340, engaged_rate=1.000, eng_dist_true_mean=1.634, eng_time_mean=0.750, frac_active_mean=0.072, effort_mean=3.610, goal_reached=0.086, qp_infeasible_rate=0.000
+   est: collision_rate=0.000, ci_lo=0.000, ci_hi=0.002, min_clear_mean=0.490, min_clear_min=0.032, engaged_rate=1.000, eng_dist_true_mean=1.415, eng_time_mean=0.920, frac_active_mean=0.059, effort_mean=2.930, goal_reached=0.021, qp_infeasible_rate=0.000
+  bcbf: collision_rate=0.025, ci_lo=0.019, ci_hi=0.033, min_clear_mean=0.279, min_clear_min=-0.230, engaged_rate=1.000, eng_dist_true_mean=1.956, eng_time_mean=0.341, frac_active_mean=0.942, effort_mean=7.979, goal_reached=0.000, qp_infeasible_rate=0.043
+showing rollout 1797: plain engages k=160, est engages k=87
+x-y BRT area ratio (est/plain) at engagement: mean=3.65, median=3.66, n=2000

@@ -1,0 +1,9 @@
+# hj_reachability / JAX environment: grid-based HJ solutions (scripts/grid) and the
+# numpy-only grid plots (air3d_grid_4d.py, air3d_grid_vs_nominal.py).
+# Versions are the ones used for the paper (Python 3.12). For GPU, install
+# "jax[cuda12]==0.11.2" instead of plain jax.
+hj_reachability==0.7.0
+jax==0.11.2
+numpy==2.5.2
+scipy==1.18.1
+matplotlib==3.11.2

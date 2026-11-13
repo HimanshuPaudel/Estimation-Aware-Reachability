@@ -1,0 +1,18 @@
+| Metric | No filter | Nominal BRT | Nominal BRT + margin (steady state) | Nominal BRT + margin (max) | Estimation-aware BRT | Belief CBF |
+|---|---|---|---|---|---|---|
+| Collision rate | 0.933 | 0.613 | 0.002 | 0.000 | 0.000 | 0.012 |
+| 95% CI | [0.922, 0.944] | [0.591, 0.634] | [0.001, 0.004] | [0.000, 0.002] | [0.000, 0.002] | [0.008, 0.018] |
+| Mean min. clearance [m] | 0.001 | 0.043 | 0.533 | 1.136 | 0.695 | 0.447 |
+| Worst min. clearance [m] | -0.028 | -0.029 | -0.007 | 0.413 | 0.025 | -0.015 |
+| Intervention rate | -- | 0.993 | 1.000 | 1.000 | 1.000 | 1.000 |
+| First intervention t [s] | -- | 1.47 | 0.64 | 0.01 | 0.31 | 0.66 |
+| First intervention \|p\| [m] | -- | 0.98 | 1.79 | 2.40 | 2.11 | 1.76 |
+| Active fraction | -- | 0.194 | 0.288 | 0.489 | 0.290 | 0.399 |
+| Effort \int|\omega-\omega_{nom}|dt | 0.00 | 0.98 | 2.71 | 5.25 | 3.34 | 2.19 |
+| Goal reached | 0.065 | 0.387 | 0.994 | 0.968 | 0.999 | 0.987 |
+| True goal error [m] | 0.489 | 0.445 | 0.414 | 0.418 | 0.413 | 0.407 |
+| Left domain | 0.000 | 0.000 | 0.001 | 0.004 | 0.001 | 0.000 |
+| QP infeasible (rollouts) | -- | -- | -- | -- | -- | 1.000 |
+| QP infeasible (steps) | -- | -- | -- | -- | -- | 0.133 |
+
+2000 rollouts per method, 8 s, kappa=3.0, delta=0.05, margins: steady state 0.670, max 1.470.

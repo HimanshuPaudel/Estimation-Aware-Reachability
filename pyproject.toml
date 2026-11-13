@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ea_reach"
+version = "0.1.0"
+description = "Estimation-aware reachability: experiments for the paper (DeepReach + hj_reachability)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Himanshu Paudel" }, { name = "Javier Borquez" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]

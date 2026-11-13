@@ -1,0 +1,93 @@
+{
+  "1.0": {
+    "none": {
+      "collision_rate": 1.0,
+      "ci_lo": 0.9980828823994873,
+      "ci_hi": 1.0,
+      "min_clear_mean": -0.44094564502366934,
+      "min_clear_min": -0.4996180266525914,
+      "engaged_rate": 0.0,
+      "eng_dist_true_mean": NaN,
+      "eng_time_mean": NaN,
+      "frac_active_mean": 0.0,
+      "effort_mean": 0.0,
+      "goal_reached": 0.7335,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain": {
+      "collision_rate": 0.7075,
+      "ci_lo": 0.6871800056534243,
+      "ci_hi": 0.7270243905423628,
+      "min_clear_mean": -0.07800296900045735,
+      "min_clear_min": -0.48728133626631315,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 0.7762163506048553,
+      "eng_time_mean": 1.37341,
+      "frac_active_mean": 0.07886083333333334,
+      "effort_mean": 3.4716599640351458,
+      "goal_reached": 0.366,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain_ss": {
+      "collision_rate": 0.002,
+      "ci_lo": 0.0007780147254709095,
+      "ci_hi": 0.005131434404639974,
+      "min_clear_mean": 0.4277857262680716,
+      "min_clear_min": -0.09983863592377995,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.2887273291942625,
+      "eng_time_mean": 1.01028,
+      "frac_active_mean": 0.07117,
+      "effort_mean": 3.3851600735162366,
+      "goal_reached": 0.061,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain_max": {
+      "collision_rate": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0019171176005129348,
+      "min_clear_mean": 0.7905481583600964,
+      "min_clear_min": 0.33999209359515115,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.6335369423445911,
+      "eng_time_mean": 0.75018,
+      "frac_active_mean": 0.07223083333333336,
+      "effort_mean": 3.609742448931444,
+      "goal_reached": 0.086,
+      "qp_infeasible_rate": 0.0
+    },
+    "est": {
+      "collision_rate": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0019171176005129348,
+      "min_clear_mean": 0.4901560874985003,
+      "min_clear_min": 0.03165190823236075,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.4147619222575238,
+      "eng_time_mean": 0.920115,
+      "frac_active_mean": 0.05945666666666667,
+      "effort_mean": 2.930218337735238,
+      "goal_reached": 0.0205,
+      "qp_infeasible_rate": 0.0
+    },
+    "bcbf": {
+      "collision_rate": 0.025,
+      "ci_lo": 0.019014328222153373,
+      "ci_hi": 0.03280693349833392,
+      "min_clear_mean": 0.27865995157316487,
+      "min_clear_min": -0.2304751037140571,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.955913051318515,
+      "eng_time_mean": 0.34055,
+      "frac_active_mean": 0.9418316666666667,
+      "effort_mean": 7.979003022097297,
+      "goal_reached": 0.0,
+      "qp_infeasible_rate": 0.0425
+    },
+    "area_ratio": {
+      "mean": 3.6541106513770396,
+      "median": 3.659090909090909,
+      "n": 2000
+    }
+  }
+}

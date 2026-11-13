@@ -1,0 +1,58 @@
+Dynamics device cuda
+training config: k3_runs/mpcadr_eadubins9d_cond/config_11_13_2026_14_06.txt
+dynamics: v=1.0, omega_max=1.2, kappa=3.0, Rc=0.5, beacon_x=2.0, beacon_y=0.0, r0=0.01, r1=0.01, qx=0.005, qy=0.005, qt=0.01
+nominal grid: (11, 161, 161, 120), frame t=1.00
+belief CBF: delta=0.0013 (kappa=3.0), pole=2.0, margin=0.0000
+steady state at the obstacle (r=0.050): lambda_max=0.0499 -> margin 0.670;  box max lambda_max=0.240 -> margin 1.470  (kappa=3.0)
+SingleBVPNet(
+  (net): FCBlock(
+    (net): Sequential(
+      (0): Sequential(
+        (0): BatchLinear(in_features=11, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (1): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (2): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (3): Sequential(
+        (0): BatchLinear(in_features=512, out_features=512, bias=True)
+        (1): Sine()
+      )
+      (4): Sequential(
+        (0): BatchLinear(in_features=512, out_features=1, bias=True)
+      )
+    )
+  )
+)
+2000 rollouts, 8s, dt=0.01; initial lambda_max(Sigma_pp) mean 0.0185; device cuda
+  No filter                              collision  93.3%  goal   6.5%  left  0.0%  effort 0.00  (1s)
+  Nominal BRT                            collision  61.3%  goal  38.7%  left  0.0%  effort 0.98  (2s)
+  Nominal BRT + margin (steady state)    collision   0.1%  goal  99.4%  left  0.1%  effort 2.71  (3s)
+  Nominal BRT + margin (max)             collision   0.0%  goal  96.8%  left  0.4%  effort 5.25  (4s)
+  Estimation-aware BRT                   collision   0.0%  goal  99.9%  left  0.1%  effort 3.34  (16s)
+  Belief CBF                             collision   1.2%  goal  98.7%  left  0.0%  effort 2.19  QP infeasible 100.0% of rollouts, 13.3% of steps  (7s)
+
+| Metric | No filter | Nominal BRT | Nominal BRT + margin (steady state) | Nominal BRT + margin (max) | Estimation-aware BRT | Belief CBF |
+|---|---|---|---|---|---|---|
+| Collision rate | 0.933 | 0.613 | 0.002 | 0.000 | 0.000 | 0.012 |
+| 95% CI | [0.922, 0.944] | [0.591, 0.634] | [0.001, 0.004] | [0.000, 0.002] | [0.000, 0.002] | [0.008, 0.018] |
+| Mean min. clearance [m] | 0.001 | 0.043 | 0.533 | 1.136 | 0.695 | 0.447 |
+| Worst min. clearance [m] | -0.028 | -0.029 | -0.007 | 0.413 | 0.025 | -0.015 |
+| Intervention rate | -- | 0.993 | 1.000 | 1.000 | 1.000 | 1.000 |
+| First intervention t [s] | -- | 1.47 | 0.64 | 0.01 | 0.31 | 0.66 |
+| First intervention \|p\| [m] | -- | 0.98 | 1.79 | 2.40 | 2.11 | 1.76 |
+| Active fraction | -- | 0.194 | 0.288 | 0.489 | 0.290 | 0.399 |
+| Effort \int|\omega-\omega_{nom}|dt | 0.00 | 0.98 | 2.71 | 5.25 | 3.34 | 2.19 |
+| Goal reached | 0.065 | 0.387 | 0.994 | 0.968 | 0.999 | 0.987 |
+| True goal error [m] | 0.489 | 0.445 | 0.414 | 0.418 | 0.413 | 0.407 |
+| Left domain | 0.000 | 0.000 | 0.001 | 0.004 | 0.001 | 0.000 |
+| QP infeasible (rollouts) | -- | -- | -- | -- | -- | 1.000 |
+| QP infeasible (steps) | -- | -- | -- | -- | -- | 0.133 |
+
+2000 rollouts per method, 8 s, kappa=3.0, delta=0.05, margins: steady state 0.670, max 1.470.
+saved dubins/out_k3_rev_g-2.0

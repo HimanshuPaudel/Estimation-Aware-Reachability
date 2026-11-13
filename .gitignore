@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv*/
+venv*/
+.ipynb_checkpoints/
+
+# Generated grid solutions (hundreds of MB to GB; regenerate with scripts/grid/)
+data/*
+!data/.gitkeep
+
+# Generated figures and experiment outputs
+figures/*
+!figures/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# New DeepReach training runs (scripts/train/train.py writes here)
+runs/
+wandb/
+
+# Only the final networks in checkpoints/ are tracked
+checkpoints/**/training/checkpoints/*
+!checkpoints/**/training/checkpoints/model_final.pth
+checkpoints/**/training/summaries/
+checkpoints/**/orig_opt.pickle
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

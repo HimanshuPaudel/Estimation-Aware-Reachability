@@ -1,0 +1,88 @@
+{
+  "1.0": {
+    "none": {
+      "collision_rate": 1.0,
+      "ci_lo": 0.9980828823994873,
+      "ci_hi": 1.0,
+      "min_clear_mean": -0.44094564502366934,
+      "min_clear_min": -0.4996180266525914,
+      "engaged_rate": 0.0,
+      "eng_dist_true_mean": NaN,
+      "eng_time_mean": NaN,
+      "frac_active_mean": 0.0,
+      "effort_mean": 0.0,
+      "goal_reached": 0.7335,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain": {
+      "collision_rate": 0.7075,
+      "ci_lo": 0.6871800056534243,
+      "ci_hi": 0.7270243905423628,
+      "min_clear_mean": -0.07800296900045735,
+      "min_clear_min": -0.48728133626631315,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 0.7762163506048553,
+      "eng_time_mean": 1.37341,
+      "frac_active_mean": 0.07886083333333334,
+      "effort_mean": 3.4716599640351458,
+      "goal_reached": 0.366,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain_ss": {
+      "collision_rate": 0.042,
+      "ci_lo": 0.03405148346729877,
+      "ci_hi": 0.05170459625477109,
+      "min_clear_mean": 0.2673180214821764,
+      "min_clear_min": -0.23792311356993656,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.127895042782776,
+      "eng_time_mean": 1.12325,
+      "frac_active_mean": 0.07194333333333333,
+      "effort_mean": 3.3803780874415454,
+      "goal_reached": 0.0825,
+      "qp_infeasible_rate": 0.0
+    },
+    "plain_max": {
+      "collision_rate": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0019171176005129348,
+      "min_clear_mean": 0.5194732010817741,
+      "min_clear_min": 0.02387856558389656,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.3818698783119934,
+      "eng_time_mean": 0.944075,
+      "frac_active_mean": 0.07202249999999999,
+      "effort_mean": 3.472917736321621,
+      "goal_reached": 0.0545,
+      "qp_infeasible_rate": 0.0
+    },
+    "est": {
+      "collision_rate": 0.0155,
+      "ci_lo": 0.010940903471396526,
+      "ci_hi": 0.021916783483500506,
+      "min_clear_mean": 0.31606366335530683,
+      "min_clear_min": -0.16412168465069127,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.219790104729331,
+      "eng_time_mean": 1.0586200000000001,
+      "frac_active_mean": 0.06238083333333333,
+      "effort_mean": 3.0324939517236325,
+      "goal_reached": 0.039,
+      "qp_infeasible_rate": 0.0
+    },
+    "bcbf": {
+      "collision_rate": 0.167,
+      "ci_lo": 0.15129521499740853,
+      "ci_hi": 0.1839815853245331,
+      "min_clear_mean": 0.13044860523050045,
+      "min_clear_min": -0.34106411321236363,
+      "engaged_rate": 1.0,
+      "eng_dist_true_mean": 1.8797889008355892,
+      "eng_time_mean": 0.480345,
+      "frac_active_mean": 0.9179241666666667,
+      "effort_mean": 7.771530968910833,
+      "goal_reached": 0.0,
+      "qp_infeasible_rate": 0.042
+    }
+  }
+}
