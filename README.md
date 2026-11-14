@@ -68,7 +68,9 @@ environments**, since their numpy/CUDA requirements conflict. Python 3.12 was us
 ```bash
 # DeepReach / torch: training, safety-filter experiments, most plots
 python -m venv .venv-torch && source .venv-torch/bin/activate
-pip install -r requirements.txt && pip install -e .
+pip install -r requirements.txt 
+#Install the appropriate PyTorch package for your system
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 deactivate
 
 # hj_reachability / JAX: grid solutions
