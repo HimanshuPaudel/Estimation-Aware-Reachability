@@ -71,17 +71,20 @@ python -m venv .venv-torch && source .venv-torch/bin/activate
 pip install -r requirements.txt 
 #Install the appropriate PyTorch package for your system
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install -e .       # installs the ea_reach package (src/)
 deactivate
 
 # hj_reachability / JAX: grid solutions
 python -m venv .venv-hj && source .venv-hj/bin/activate
 pip install -r requirements-hj.txt
+#install hj_reachability toolbox
+pip install hj_reachability==0.7.0   # after jax/flax are installed
 deactivate
 ```
 
-The scripts find `src/` and the DeepReach submodule by themselves, so `pip install -e .`
-is optional and every script can be run from any directory. Set `DEEPREACH_ROOT` to use a
-different DeepReach checkout.
+The scripts find `src/`
+and the DeepReach submodule by themselves, so they can be run from any directory. Set
+`DEEPREACH_ROOT` to use a different DeepReach checkout.
 
 ## Reproducing the paper
 
@@ -107,10 +110,7 @@ file it writes (`figures/` and `outputs/` are created on first use):
 | Fig. `nominal_vs_estaware_0p001` and the 13.6× / 37× BRT area ratios (Sec. 6.1, App. B) | `scripts/grid/air3d_nominal_grid.py --xy-max 1 --shape 201 201 200 --out-prefix data/air3d_nominal_xy1` → `scripts/plotting/air3d_grid_vs_nominal.py` | `figures/air3d_grid_vs_nominal/paper_overlay_vanilla_tau_1.00.pdf`; ratios = `expans` column of the printout | hj (grid), either (plot) |
 | Table `quad_kappa`: quadrotor, κ = 2 and 3 (Sec. 6.2) | `scripts/experiments/quadrotor_safety_filter.py --n_rollouts 2000`, once per `--est_ckpt` | `outputs/quadrotor_safety_filter/kappa_{3,2}/table.tex` | torch |
 | Fig. `quad_brt_slice` and the 3.65× area ratio at engagement (Sec. 6.2) | same script, κ = 3 run | `brt_slices_engagement.pdf`; ratio in the log | torch |
-| Table `dubins`, Fig. `dubins_traj` (Sec. 6.3) | `scripts/grid/dubins_nominal_grid.py` → `scripts/experiments/dubins_safety_filter.py --n_rollouts 2000` | `outputs/dubins_safety_filter/` (`table.md`, `trajectories.pdf`) | hj → torch |
-
-Fig. `motivation` (Sec. 4) is a schematic and has no script. `scripts/plotting/air3d_grid_4d.py`
-plots more slices of the 4D grid solution; this figure is not in the paper.
+| Table `dubins`, Fig. `dubins_traj` (Sec. 6.3) | `scripts/grid/dubins_nominal_grid.py` → `scripts/experiments/dubins_safety_filter.py --n_rollouts 2000` | `outputs/dubins_safety_filter/` (`table.md`, `trajectories.pdf`) | h
 
 The experiment scripts default to the paper's scenarios (initial-state ranges, goals,
 thresholds, noise levels); only the number of rollouts is passed explicitly where shown.
@@ -133,7 +133,7 @@ on the same initial states and pre-drawn noise:
 |---|---|
 | No filter | `none` method of each experiment script |
 | Nominal / plain BRT, queried at the certainty-equivalent state | Air3D, Dubins: grid solutions from `scripts/grid/` (`GridVanilla`, `GridNominal`); quadrotor: plain 6D network `checkpoints/pquad_plain_6d` |
-| Nominal BRT + constant margin κ√λ̄ (steady-state and largest covariance) | `InflatedVanilla` (Air3D), `InflatedOracle` (quadrotor), `Inflated` (Dubins) |
+| Nominal BRT + constant margin κ√λ̄ (steady-state and largest covariance) | `InflatedVanilla` (Air3D), `InflatedPlain` (quadrotor), `Inflated` (Dubins) |
 | Belief CBF ([Vahs et al., RA-L 2023](https://doi.org/10.1109/LRA.2023.3330662), [arXiv](https://arxiv.org/abs/2309.06499)) | `src/ea_reach/belief_cbf.py` (`BeliefCBF`, belief dynamics `Air3DBelief`, `QuadBelief`, `DubinsBelief`); the module docstring lists the adaptations to our setting |
 
 A single method can be run with `--filters` (Air3D) or `--methods` (Dubins); `python -m

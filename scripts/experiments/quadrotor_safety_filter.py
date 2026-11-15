@@ -150,7 +150,7 @@ class ValueOracle:
         return np.concatenate(out)
 
 
-class InflatedOracle:
+class InflatedPlain:
     """Plain BRT with the target inflated by a constant margin m: V_m = V - m (exact for avoid)."""
 
     def __init__(self, base, margin):
@@ -689,7 +689,7 @@ def main():
         P_ss = math.sqrt(de.q / de.c_ric)                 # isotropic fixed point of P' = qI - c P^2
         P_max = de.P_hi + de.Pxy_max                      # largest lambda_max(P) in the training box
         for key, Pv in (("plain_ss", P_ss), ("plain_max", P_max)):
-            orcs[key] = InflatedOracle(orcs["plain"], de.kappa * math.sqrt(Pv))
+            orcs[key] = InflatedPlain(orcs["plain"], de.kappa * math.sqrt(Pv))
             print(f"{key}: plain target inflated by kappa*sqrt({Pv:.4f}) = {orcs[key].margin:.4f} "
                   f"(engages when V_plain <= {a.delta + orcs[key].margin:.4f})")
     rng_common = common_ranges(dp, de)
