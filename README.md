@@ -171,7 +171,15 @@ To use a new run, pass its checkpoint with `--ckpt` / `--est_ckpt`, or copy the 
 ## Citation
 
 ```bibtex
-...
+@misc{paudel2026estimationawarereachability,
+      title={Estimation-Aware Reachability}, 
+      author={Himanshu Paudel and Javier Borquez},
+      year={2026},
+      eprint={2611.23830},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2611.23830}, 
+}
 ```
 
 ## Acknowledgements
